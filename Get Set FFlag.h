@@ -3,10 +3,10 @@
 //All addresses in this release are rebased to 0x400000 to get the address in memory simply do "Address - 0x400000 + RobloxPlayerBeta.exe"
 
 typedef bool(__cdecl* FLog)(const std::string& name, std::string& value, bool alsoCheckUnknown);
-FLog GetValue = (FLog)Rebase(0x15A5860);
+FLog GetValue = reinterpret_cast<FLog>(Rebase(0x15A5860));
 
 typedef bool(__cdecl* SLog)(const std::string& name, const std::string& value, int Type, bool loadedFromServer);
-SLog SetValue = (SLog)Rebase(0x15A6030);
+SLog SetValue = reinterpret_cast<SLog>(Rebase(0x15A6030));
 
 int GetFFlag(int ls)
 {
