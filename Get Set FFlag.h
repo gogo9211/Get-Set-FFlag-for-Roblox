@@ -32,7 +32,6 @@ int SetFFlag(int ls)
 	if (!exist)
 		Roblox::r_luaL_error("Flag not found!");
 
-	for (int i = 0; i <= 4; i++)
-		SetValue(flag, value, i, 0);
+	SetValue(flag, value, 63, 0);
 	return 0;
 }
